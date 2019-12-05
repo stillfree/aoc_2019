@@ -3,12 +3,13 @@ import sys
 import time
 import math
 
-min = 234208
-max = 765869
+min = 2342083912303
+max = 7658691233493
+length = len(str(max))
 
 def recursive(numberBefore, position, currentNumber, doubleFound):
-    global min, max
-    if(position > 5):
+    global min, max, length
+    if(position == length):
         if(doubleFound):
             return 1
         return 0
@@ -29,13 +30,13 @@ def recursive(numberBefore, position, currentNumber, doubleFound):
     #print( position, numberBefore, globalMin, currentMin, currentMax)
     for i in range( currentMin, currentMax + 1):
         if(i == numberBefore):
-            sum += partOne(i, position + 1, currentNumber + str(i), True)
+            sum += recursive(i, position + 1, currentNumber + str(i), True)
         else:
-            sum += partOne(i, position + 1, currentNumber + str(i), doubleFound)
+            sum += recursive(i, position + 1, currentNumber + str(i), doubleFound)
     return sum
 
 def main():
-    print(partOne(0, 0, "", False))
+    print(recursive(0, 0, "", False))
 
 if __name__ == "__main__":
     main()

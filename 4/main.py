@@ -8,6 +8,8 @@ def readInput():
     lines = file.readlines()
     return lines
 
+# [0-9]{amount = 0-4} [doubleBiggerThenFirstNum]{1}[numberBiggerThenDouble]{4 - amount}
+
 def partOne(min, max):
     #bruteForce
     counter = 0
@@ -25,8 +27,8 @@ def partOne(min, max):
 
         if(happy and double and tripple):
             counter += 1
-            print(i)
-    print(counter)
+            #print(i)
+    #print(counter)
 
 def main():
     min = 234208
