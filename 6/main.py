@@ -18,7 +18,6 @@ def partOne(Tree, currentElement, currentCounter):
         return currentCounter
 
 def partTwo(Tree):
-    print(Tree)
     jumps = []
     element = "YOU"
     while( element != "COM" ):
@@ -47,8 +46,8 @@ def main():
             revertTree[element[1]].append(element[0])
         else:
             revertTree[element[1]] = [element[0]]
-    print(partOne(Tree, "COM", 0))
-    print(partTwo(revertTree))
+    print("PartOne: " + str(partOne(Tree, "COM", 0)))
+    print("PartTwo: " + str(partTwo(revertTree)))
 
 if __name__ == "__main__":
     main()
